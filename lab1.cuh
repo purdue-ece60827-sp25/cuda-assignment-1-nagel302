@@ -1,6 +1,6 @@
 /**
  * @file lab1.cuh
- * @author your name (you@domain.com)
+ * @author Jake Nagel (nagel30@purdue.edu)
  * @brief 
  * @version 0.1
  * @date 2021-01-16
@@ -14,7 +14,7 @@
 #ifndef LAB1_CUH
 #define LAB1_CUH
 
-	// #define DEBUG_PRINT_DISABLE
+	#define DEBUG_PRINT_DISABLE
 	
 	#define VECTOR_SIZE (1 << 15)
 

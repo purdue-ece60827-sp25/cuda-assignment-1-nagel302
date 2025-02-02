@@ -13,6 +13,9 @@
 
 	#define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
 	extern inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=true);
+    
+	// Re-implements atomicAdd using uint64_t 
+    extern __device__ uint64_t atomicAddUint64(uint64_t* address, uint64_t val);
 
 	/**
 	 * @brief GPU kernel to generate sampleSize points in the 2D plane and 

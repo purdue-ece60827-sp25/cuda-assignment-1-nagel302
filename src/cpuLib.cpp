@@ -1,3 +1,16 @@
+/**
+ * @file cpuLib.cpp
+ * @author Jake Nagel (nagel30@purdue.edu)
+ * @brief 
+ * @version 0.2
+ * @date 2025-01-29
+ * 
+ * 0.2 : Added tolerance to verifyVector
+ *
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "cpuLib.h"
 
 
@@ -21,8 +34,10 @@ void vectorInit(float* v, int size) {
 
 int verifyVector(float* a, float* b, float* c, float scale, int size) {
 	int errorCount = 0;
+	float c_exp;
 	for (int idx = 0; idx < size; ++idx) {
-		if (c[idx] != scale * a[idx] + b[idx]) {
+		c_exp = scale * a[idx] + b[idx];
+		if (c[idx] < (c_exp - SAXPY_TOL) || c[idx] > (c_exp + SAXPY_TOL)) {
 			++errorCount;
 			#ifndef DEBUG_PRINT_DISABLE
 				std::cout << "Idx " << idx << " expected " << scale * a[idx] + b[idx] 

@@ -1,4 +1,16 @@
 
+/**
+ * @file cpuLib.h
+ * @author Jake Nagel (nagel30@purdue.edu)
+ * @brief 
+ * @version 0.2
+ * @date 2025-01-29
+ * 
+ * 0.2 : Added tolerance to verifyVector
+ *
+ * @copyright Copyright (c) 2025
+ * 
+ */
 
 #ifndef CPU_LIB_H
 #define CPU_LIB_H
@@ -12,8 +24,10 @@
 	#include <cstring>
 	#include <cstdarg>
 	
+	#define SAXPY_TOL 0.001
+
 	// Uncomment this to suppress console output
-	// #define DEBUG_PRINT_DISABLE
+	#define DEBUG_PRINT_DISABLE
 
 	extern void dbprintf(const char* fmt...);
 
